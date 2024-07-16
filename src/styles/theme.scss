@@ -1,0 +1,12 @@
+
+body[data-theme='light'] {
+    --bgDark: #FFFFFF;
+    --inputBg: #C3C1E5;
+    --textColor: #000000;
+}
+
+body[data-theme='dark'] {
+    --bgDark: #0D1117;
+    --inputBg: #666666;
+    --textColor: #FFFFFF;
+}
