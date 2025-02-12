@@ -1,0 +1,120 @@
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: 0.5s transform ease;
+
+    &.active {
+        transform: translateY(0);
+    }
+
+    &__wrapper {
+        background: #fffbfe;
+        border-radius: 28px;
+        padding: 24px;
+
+        &-title {
+            font-weight: 400;
+            font-size: 24px;
+            color: #1c1b1f;
+            margin-bottom: 16px;
+        }
+
+        &-btns {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            column-gap: 20px;
+
+            button {
+                border: none;
+                outline: none;
+                background: none;
+                text-transform: uppercase;
+                color: #6750a4;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 143%;
+                letter-spacing: 0.01em;
+                cursor: pointer;
+
+                &:nth-of-type(1) {
+                    color: #cf1b1b;
+                }
+            }
+        }
+    }
+
+    &__group {
+        margin-bottom: 16px;
+        position: relative;
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            display: block;
+            padding: 8px 16px;
+            background: #e7e0ec;
+            border-radius: 4px 4px 0 0;
+            border-bottom: 1px solid #1c1b1f;
+        }
+
+        label {
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.03em;
+            color: #6750a4;
+            pointer-events: none;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        input:focus~label,
+        input:valid~label {
+            top: -10px;
+            font-size: 10px;
+        }
+
+        .bar {
+            position: relative;
+            display: block;
+            width: 100%;
+
+            &::before,
+            &::after {
+                content: '';
+                height: 2px;
+                width: 0;
+                bottom: 1px;
+                position: absolute;
+                background: #6750a4;
+                transition: 0.2s ease all;
+            }
+
+            &::before {
+                left: 50%;
+            }
+
+            &::after {
+                right: 50%;
+            }
+        }
+
+        input:focus~.bar::before,
+        input:focus~.bar::after,
+        input:valid~.bar::before,
+        input:valid~.bar::after {
+            width: 50%;
+        }
+    }
+}

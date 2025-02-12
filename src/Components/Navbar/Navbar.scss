@@ -1,0 +1,29 @@
+.Nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    &__title {
+        font-weight: 400;
+        font-size: 22px;
+        color: #323232;
+    }
+
+    &__block {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+        background: #fffbfe, rgba(103, 80, 164, 0.11);
+        padding: 20px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        cursor: pointer;
+
+        &-title {
+            font-weight: 500;
+            font-size: 16px;
+            color: #6750a4;
+        }
+    }
+}
